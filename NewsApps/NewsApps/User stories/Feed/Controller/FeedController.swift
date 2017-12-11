@@ -65,6 +65,18 @@ class FeedController: UIViewController, UITableViewDataSource {
         }
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let viewController as FeedDetailsViewController:
+            guard let index = tableView.indexPathForSelectedRow?.row,
+                let items = fetchedResultsController.fetchedObjects else { return }
+            viewController.feedItem = items[index]
+            
+        default:
+            assertionFailure("Handle transiotion to \(segue.destination)")
+        }
+    }
 }
 
 extension FeedController: NSFetchedResultsControllerDelegate {

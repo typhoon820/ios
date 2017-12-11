@@ -10,11 +10,10 @@
 import Foundation
 import CoreData
 
-
 public class FeedItemMO: NSManagedObject {
     
     @discardableResult
-    class func createOrUpdate(item: FeedItem,
+    class func createOrUpdate(item: FeedItemProtocol,
                               context: NSManagedObjectContext) throws -> FeedItemMO
     {
         let request: NSFetchRequest<FeedItemMO> = FeedItemMO.fetchRequest()
@@ -32,8 +31,9 @@ public class FeedItemMO: NSManagedObject {
             feedItemMO = FeedItemMO(context: context)
         }
         feedItemMO.title = item.title
-        feedItemMO.desc = item.description
+        feedItemMO.desc = item.desc
         feedItemMO.pubDate = item.pubDate
+        feedItemMO.link = item.link
         
         return feedItemMO
     }

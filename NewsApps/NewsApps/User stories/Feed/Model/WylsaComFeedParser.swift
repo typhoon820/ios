@@ -19,7 +19,7 @@ class WylsaComFeedParser: FeedItemXMLParser {
         ]
         
         let mappedItems = items.flatMap { (item) -> FeedItem? in
-            guard let data = item.description.data(using: .utf8) else {
+            guard let data = item.desc.data(using: .utf8) else {
                 return nil
             }
             guard let attributedString = try? NSAttributedString(data: data,
@@ -28,10 +28,9 @@ class WylsaComFeedParser: FeedItemXMLParser {
                 else { return nil }
             
             return FeedItem(title: item.title,
-                            description: attributedString.string,
+                            desc: attributedString.string,
                             pubDate: item.pubDate,
-                            link: item.link,
-                            image: item.image)
+                            link: item.link)
         }
         return mappedItems
     }

@@ -11,17 +11,15 @@ import Foundation
 import CoreData
 
 
-extension FeedItemMO {
+extension FeedItemMO: FeedItemProtocol {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FeedItemMO> {
         return NSFetchRequest<FeedItemMO>(entityName: "FeedItem")
     }
 
-    @NSManaged public var id: String?
     @NSManaged public var pubDate: Date
-    @NSManaged public var title: String?
-    @NSManaged public var desc: String?
-    @NSManaged public var image: String?
+    @NSManaged public var title: String
+    @NSManaged public var desc: String
+    @NSManaged public var link: URL
     @NSManaged public var source: SourceMO?
-
 }

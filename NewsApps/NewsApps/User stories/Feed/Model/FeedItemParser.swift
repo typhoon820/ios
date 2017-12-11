@@ -37,10 +37,7 @@ class FeedItemXMLParser: FeedItemParsable {
                 let linkUrl = URL(string: link) else {
                 throw ParsingError.wrongStructure(key: "link")
             }
-            var imageUrl: URL? = nil
-            if let imageName = item["image"]["url"].element?.text {
-                imageUrl = URL(string: imageName)
-            }
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZ"
             
@@ -49,10 +46,9 @@ class FeedItemXMLParser: FeedItemParsable {
             }
             
             result.append(FeedItem(title: title,
-                                   description: description,
+                                   desc: description,
                                    pubDate: date,
-                                   link: linkUrl,
-                                   image: imageUrl))
+                                   link: linkUrl))
         }
         return result
     }

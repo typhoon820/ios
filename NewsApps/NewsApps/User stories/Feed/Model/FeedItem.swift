@@ -8,10 +8,16 @@
 
 import UIKit
 
-struct FeedItem {
+struct FeedItem: FeedItemProtocol {
     let title: String
-    let description: String
+    let desc: String
     let pubDate: Date
     let link: URL
-    let image: URL?
+}
+
+protocol FeedItemProtocol {
+    var title: String { get }
+    var desc: String { get }
+    var pubDate: Date { get }
+    var link: URL { get }
 }
