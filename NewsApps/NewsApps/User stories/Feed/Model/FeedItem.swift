@@ -12,5 +12,6 @@ struct FeedItem {
     let title: String
     let description: String
     let pubDate: Date
-    let image: UIImage?
+    let link: URL
+    let image: URL?
 }

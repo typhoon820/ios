@@ -12,7 +12,7 @@ import CoreData
 class FeedModel: NSObject, XMLParserDelegate {
     
     private let session = URLSession(configuration: .default)
-    private let parser: FeedItemParsable = FeedItemXMLParser()
+    private let parser: FeedItemParsable = WylsaComFeedParser()
     private lazy var coreDataManager: CoreDataManager = {
         let manager = CoreDataManager()
         let context = manager.persistentContaner.viewContext

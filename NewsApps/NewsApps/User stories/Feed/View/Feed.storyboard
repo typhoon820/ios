@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,41 +30,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок новости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9b-Ma-C46">
-                                                    <rect key="frame" x="113" y="8" width="247" height="21.5"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Длинное описание новости, Длинное описание новости, Длинное описание новости, Длинное описание новости." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJN-3h-Cdl">
-                                                    <rect key="frame" x="113" y="38" width="247" height="19.5"/>
+                                                    <rect key="frame" x="15" y="41" width="345" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xv8-fN-jRG">
-                                                    <rect key="frame" x="15" y="8" width="90" height="90.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="xv8-fN-jRG" secondAttribute="height" multiplier="1:1" id="XMC-1B-iP5"/>
-                                                        <constraint firstAttribute="width" constant="90" id="rUB-sp-Va9"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NJN-3h-Cdl" firstAttribute="top" secondItem="O9b-Ma-C46" secondAttribute="bottom" constant="8" id="44N-tp-W6j"/>
                                                 <constraint firstItem="NJN-3h-Cdl" firstAttribute="leading" secondItem="O9b-Ma-C46" secondAttribute="leading" id="4Lt-AD-QvM"/>
-                                                <constraint firstItem="O9b-Ma-C46" firstAttribute="leading" secondItem="xv8-fN-jRG" secondAttribute="trailing" constant="8" id="8ht-NP-TAg"/>
-                                                <constraint firstItem="xv8-fN-jRG" firstAttribute="leading" secondItem="7F8-Tn-dkR" secondAttribute="leadingMargin" id="KAz-9K-z2P"/>
                                                 <constraint firstItem="NJN-3h-Cdl" firstAttribute="trailing" secondItem="O9b-Ma-C46" secondAttribute="trailing" id="OdK-pE-G6S"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xv8-fN-jRG" secondAttribute="bottom" priority="750" id="Pd1-XW-ajR"/>
+                                                <constraint firstItem="O9b-Ma-C46" firstAttribute="top" secondItem="7F8-Tn-dkR" secondAttribute="topMargin" id="QAV-3a-3Ue"/>
+                                                <constraint firstItem="O9b-Ma-C46" firstAttribute="leading" secondItem="7F8-Tn-dkR" secondAttribute="leadingMargin" id="WvH-mO-GuL"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NJN-3h-Cdl" secondAttribute="bottom" constant="8" id="jEp-G5-bk7"/>
-                                                <constraint firstItem="xv8-fN-jRG" firstAttribute="top" secondItem="7F8-Tn-dkR" secondAttribute="top" constant="8" id="pnL-kJ-ECH"/>
-                                                <constraint firstItem="O9b-Ma-C46" firstAttribute="top" secondItem="xv8-fN-jRG" secondAttribute="top" id="u77-ic-zt3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="O9b-Ma-C46" secondAttribute="trailing" id="yVm-wO-4qV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="newsDescriptionLabel" destination="NJN-3h-Cdl" id="BBp-gP-gts"/>
-                                            <outlet property="newsImageView" destination="xv8-fN-jRG" id="gdH-Zs-F7a"/>
                                             <outlet property="newsTitleLabel" destination="O9b-Ma-C46" id="2f6-ap-pE0"/>
                                         </connections>
                                     </tableViewCell>
