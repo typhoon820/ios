@@ -21,5 +21,6 @@ extension FeedItemMO: FeedItemProtocol {
     @NSManaged public var title: String
     @NSManaged public var desc: String
     @NSManaged public var link: URL
+    @NSManaged public var details: String?
     @NSManaged public var source: SourceMO?
 }

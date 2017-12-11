@@ -13,13 +13,4 @@ class NewsCell: UITableViewCell {
     
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsDescriptionLabel: UILabel!
-    @IBOutlet weak var newsImageView: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func prepareForReuse() {
-        super.awakeFromNib()
-    }
 }

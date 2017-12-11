@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 import CoreData
+import SafariServices
 
 class FeedController: UIViewController, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     let model = FeedModel()
     
     private lazy var fetchedResultsController: NSFetchedResultsController<FeedItemMO> = {
@@ -28,8 +30,6 @@ class FeedController: UIViewController, UITableViewDataSource {
         
         return fetchedResultsController
     }()
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,19 @@ class FeedController: UIViewController, UITableViewDataSource {
             newsCell.newsDescriptionLabel.text = feedItem.desc
         }
         return cell
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard let index = tableView.indexPathForSelectedRow?.row,
+            let items = fetchedResultsController.fetchedObjects else { return true }
+        
+        let item = items[index]
+        if item.details != nil {
+            return true
+        } else {
+            present(SFSafariViewController(url: item.link), animated: true, completion: nil)
+            return false
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

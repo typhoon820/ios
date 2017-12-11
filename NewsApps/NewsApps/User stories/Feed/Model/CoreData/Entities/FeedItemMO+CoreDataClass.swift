@@ -34,6 +34,7 @@ public class FeedItemMO: NSManagedObject {
         feedItemMO.desc = item.desc
         feedItemMO.pubDate = item.pubDate
         feedItemMO.link = item.link
+        feedItemMO.details = item.details
         
         return feedItemMO
     }

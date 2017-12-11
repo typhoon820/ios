@@ -11,7 +11,7 @@ import CoreData
 
 protocol FeedItemSaver {
     
-    func save(feedItems: [FeedItem]) throws
+    func save(feedItems: [FeedItemProtocol]) throws
 }
 
 class FeedItemCoreDataSaver: FeedItemSaver {
@@ -22,7 +22,7 @@ class FeedItemCoreDataSaver: FeedItemSaver {
         self.context = context
     }
     
-    func save(feedItems: [FeedItem]) throws {
+    func save(feedItems: [FeedItemProtocol]) throws {
         for feedItem in feedItems {
             try FeedItemMO.createOrUpdate(item: feedItem, context: context)
         }

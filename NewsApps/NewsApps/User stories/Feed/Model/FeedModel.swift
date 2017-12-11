@@ -11,8 +11,22 @@ import CoreData
 
 class FeedModel: NSObject, XMLParserDelegate {
     
+    struct Source {
+        let parser: FeedItemParsable
+        let url: URL
+    }
+    
+    override init() {
+        let wylsa = Source(parser: WylsaComFeedParser(),
+                           url: URL(string: "https://wylsa.com/feed")!)
+        let lenta = Source(parser: FeedItemXMLParser(),
+                           url: URL(string: "https://lenta.ru/rss/news")!)
+        sources = [wylsa, lenta]
+        super.init()
+    }
+    
     private let session = URLSession(configuration: .default)
-    private let parser: FeedItemParsable = WylsaComFeedParser()
+    private let sources: [Source]
     private lazy var coreDataManager: CoreDataManager = {
         let manager = CoreDataManager()
         let context = manager.persistentContaner.viewContext
@@ -24,28 +38,27 @@ class FeedModel: NSObject, XMLParserDelegate {
         let context = container.newBackgroundContext()
         return FeedItemCoreDataSaver(context: context)
     }
-    
     var viewContext: NSManagedObjectContext {
         return coreDataManager.persistentContaner.viewContext
     }
     
     func retreiveFeed() {
-        guard let url = URL(string: "https://wylsa.com/feed") else { return }
-        
-        let task = session.dataTask(with: url)
-        { (data, response, error) in
-            if let data = data {
-                do {
-                    let items = try self.parser.parse(data: data)
-                    try self.saver.save(feedItems: items)
-                } catch {
+        for source in sources {
+            let task = session.dataTask(with: source.url)
+            { (data, response, error) in
+                if let data = data {
+                    do {
+                        let items = try source.parser.parse(data: data)
+                        try self.saver.save(feedItems: items)
+                    } catch {
+                        print(error)
+                    }
+                }
+                if let error = error {
                     print(error)
                 }
             }
-            if let error = error {
-                print(error)
-            }
+            task.resume()
         }
-        task.resume()
     }
 }

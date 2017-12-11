@@ -10,9 +10,10 @@ import UIKit
 
 struct FeedItem: FeedItemProtocol {
     let title: String
-    let desc: String
     let pubDate: Date
     let link: URL
+    var desc: String
+    var details: String?
 }
 
 protocol FeedItemProtocol {
@@ -20,4 +21,5 @@ protocol FeedItemProtocol {
     var desc: String { get }
     var pubDate: Date { get }
     var link: URL { get }
+    var details: String? { get }
 }

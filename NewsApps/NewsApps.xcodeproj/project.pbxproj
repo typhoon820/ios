@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57D42A7B1FDF153E0055929F /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D42A7A1FDF153E0055929F /* Initial.storyboard */; };
+		57D42A7F1FDF15910055929F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D42A7E1FDF15910055929F /* Settings.storyboard */; };
+		57D42A841FDF16FA0055929F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D42A831FDF16FA0055929F /* SettingsController.swift */; };
 		57D9A99C1FDF0E0F0017A4FA /* WylsaComFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9A99B1FDF0E0F0017A4FA /* WylsaComFeedParser.swift */; };
 		57D9A9A01FDF0FB50017A4FA /* FeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9A99F1FDF0FB50017A4FA /* FeedDetailsViewController.swift */; };
 		57D9A9A31FDF0FEA0017A4FA /* FeedDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D9A9A21FDF0FEA0017A4FA /* FeedDetails.storyboard */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57D42A7A1FDF153E0055929F /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		57D42A7E1FDF15910055929F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		57D42A831FDF16FA0055929F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		57D9A99B1FDF0E0F0017A4FA /* WylsaComFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WylsaComFeedParser.swift; sourceTree = "<group>"; };
 		57D9A99F1FDF0FB50017A4FA /* FeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailsViewController.swift; sourceTree = "<group>"; };
 		57D9A9A21FDF0FEA0017A4FA /* FeedDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetails.storyboard; sourceTree = "<group>"; };
@@ -74,6 +80,47 @@
 				57D9A99E1FDF0FA40017A4FA /* Controller */,
 			);
 			path = FeedDetails;
+			sourceTree = "<group>";
+		};
+		57D42A781FDF15270055929F /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				57D42A791FDF15320055929F /* View */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		57D42A791FDF15320055929F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D42A7A1FDF153E0055929F /* Initial.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57D42A7C1FDF157B0055929F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				57D42A821FDF16EB0055929F /* Controller */,
+				57D42A7D1FDF15870055929F /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		57D42A7D1FDF15870055929F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D42A7E1FDF15910055929F /* Settings.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57D42A821FDF16EB0055929F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57D42A831FDF16FA0055929F /* SettingsController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		57D9A99E1FDF0FA40017A4FA /* Controller */ = {
@@ -123,6 +170,8 @@
 		AE3C31B41F95CA2100873DD6 /* User stories */ = {
 			isa = PBXGroup;
 			children = (
+				57D42A7C1FDF157B0055929F /* Settings */,
+				57D42A781FDF15270055929F /* Initial */,
 				576CDC061FDF005300F83F88 /* FeedDetails */,
 				AE3C31B51F95CA6C00873DD6 /* Feed */,
 			);
@@ -262,6 +311,8 @@
 				AE3C31AD1F95C91A00873DD6 /* LaunchScreen.storyboard in Resources */,
 				AE3C31AA1F95C91A00873DD6 /* Assets.xcassets in Resources */,
 				AE3C31BB1F95CB5E00873DD6 /* Feed.storyboard in Resources */,
+				57D42A7F1FDF15910055929F /* Settings.storyboard in Resources */,
+				57D42A7B1FDF153E0055929F /* Initial.storyboard in Resources */,
 				57D9A9A31FDF0FEA0017A4FA /* FeedDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D42A841FDF16FA0055929F /* SettingsController.swift in Sources */,
 				AEA8E55E1FBACD130080F91B /* FeedItemMO+CoreDataProperties.swift in Sources */,
 				AE3C31A31F95C91A00873DD6 /* AppDelegate.swift in Sources */,
 				AE3C31C11F95CEB700873DD6 /* FeedModel.swift in Sources */,

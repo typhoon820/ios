@@ -15,7 +15,11 @@ class FeedDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = feedItem?.title
-        self.textView.text = feedItem?.desc
+        title = feedItem?.title
+        textView.text = feedItem?.details
+        textView.textContainerInset = UIEdgeInsets(top: 20,
+                                                   left: 10,
+                                                   bottom: 20,
+                                                   right: 10)
     }
 }
