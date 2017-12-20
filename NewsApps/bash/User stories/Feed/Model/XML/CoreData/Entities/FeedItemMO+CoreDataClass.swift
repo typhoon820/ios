@@ -38,4 +38,12 @@ public class FeedItemMO: NSManagedObject {
         feedItemMO.isInFavorites = item.isInFavorites
         return feedItemMO
     }
+    @discardableResult
+    class func findFavorites(context: NSManagedObjectContext) throws -> [FeedItemMO]
+    {
+        let request: NSFetchRequest<FeedItemMO> = FeedItemMO.fetchRequest()
+        request.predicate=NSPredicate(format: "isInFavorites = true")
+        let result = try context.fetch(request)
+        return result
+    }
 }

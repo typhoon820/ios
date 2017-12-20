@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DBd-eL-wV7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="S57-iD-mgf">
+            <objects>
+                <navigationController id="DBd-eL-wV7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IOs-M5-chW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IxF-zO-GyU" kind="relationship" relationship="rootViewController" id="0rE-23-ejr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9m-ew-dmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354" y="278"/>
+        </scene>
+        <!--bash.im-->
+        <scene sceneID="FqZ-Rb-hni">
+            <objects>
+                <viewController id="IxF-zO-GyU" customClass="SettingsController" customModule="Bash_feed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tYW-lh-6b4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="al4-cT-brs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="90" id="SNJ-Fl-AaS" customClass="FavoriteCell" customModule="Bash_feed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SNJ-Fl-AaS" id="W3Z-EG-Hzc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок новости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvt-Fr-kyX">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Длинное описание новости, Длинное описание новости, Длинное описание новости, Длинное описание новости." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOf-eB-Per">
+                                                    <rect key="frame" x="8" y="38" width="359" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBE-zU-cfK">
+                                                    <rect key="frame" x="327" y="-2" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="favorites" image="heart-unselected.png"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Wvt-Fr-kyX" firstAttribute="top" secondItem="W3Z-EG-Hzc" secondAttribute="topMargin" id="Pqi-UK-ZaI"/>
+                                                <constraint firstItem="xOf-eB-Per" firstAttribute="trailing" secondItem="Wvt-Fr-kyX" secondAttribute="trailing" id="Pzb-k2-LXv"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xOf-eB-Per" secondAttribute="bottom" constant="8" id="TtR-aU-aBK"/>
+                                                <constraint firstItem="xOf-eB-Per" firstAttribute="top" secondItem="Wvt-Fr-kyX" secondAttribute="bottom" constant="8" id="WW0-7k-rDX"/>
+                                                <constraint firstItem="Wvt-Fr-kyX" firstAttribute="leading" secondItem="W3Z-EG-Hzc" secondAttribute="leadingMargin" id="Ydh-Q2-QYk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wvt-Fr-kyX" secondAttribute="trailing" id="v7M-PJ-olC"/>
+                                                <constraint firstItem="xOf-eB-Per" firstAttribute="leading" secondItem="Wvt-Fr-kyX" secondAttribute="leading" id="xfU-uE-F2l"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="isInFavorites" destination="MBE-zU-cfK" id="Ew9-EA-74R"/>
+                                            <outlet property="newsDescriptionLabel" destination="xOf-eB-Per" id="jjd-nQ-Hll"/>
+                                            <outlet property="newsTitleLabel" destination="Wvt-Fr-kyX" id="BGT-1A-s6m"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IxF-zO-GyU" id="3um-vy-R99"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="al4-cT-brs" firstAttribute="leading" secondItem="ngq-ao-TeX" secondAttribute="leading" id="20l-l5-3S9"/>
+                            <constraint firstItem="ngq-ao-TeX" firstAttribute="bottom" secondItem="al4-cT-brs" secondAttribute="bottom" id="GEh-pY-qQi"/>
+                            <constraint firstItem="al4-cT-brs" firstAttribute="top" secondItem="ngq-ao-TeX" secondAttribute="top" id="q7T-ky-NzU"/>
+                            <constraint firstItem="ngq-ao-TeX" firstAttribute="trailing" secondItem="al4-cT-brs" secondAttribute="trailing" id="vgb-bY-zKQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ngq-ao-TeX"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="s70-bg-nXb"/>
+                    <navigationItem key="navigationItem" title="bash.im" id="OQF-ha-8NX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="al4-cT-brs" id="dtR-Zw-hKs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DhW-Xg-pel" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart-unselected.png" width="50" height="50"/>
+    </resources>
+</document>

@@ -82,7 +82,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dSM-q9-XVv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="6DS-my-wB9"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="6DS-my-wB9"/>
                     <navigationItem key="navigationItem" title="bash.im" id="AyF-k3-Ai9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

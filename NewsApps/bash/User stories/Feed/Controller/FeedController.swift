@@ -36,10 +36,19 @@ class FeedController: UIViewController, UITableViewDataSource {
         if let newsCell = cell as? NewsCell{
             if(newsCell.isInFavorites.image(for: .normal)!.isEqual(imgDeselcted)){
                 newsCell.isInFavorites.setImage(imgSelected, for: .normal)
+            
             }
             else{
                 newsCell.isInFavorites.setImage(imgDeselcted, for: .normal)
             }
+            
+            guard let items = fetchedResultsController.fetchedObjects
+                else{
+                    return
+            }
+            let item = items[indexPath.item]
+            item.isInFavorites = !item.isInFavorites
+            model.update(item: item)
             
         }
     }
