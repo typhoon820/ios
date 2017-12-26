@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
-class SettingsController: UIViewController, UITableViewDataSource {
+class FavoritesController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let model = FeedModel()
+    lazy var model = FeedModel(with: UIApplication.container)
     
     let imgSelected = UIImage(named: "heart-selected.png") as UIImage!
     
@@ -66,19 +66,36 @@ class SettingsController: UIViewController, UITableViewDataSource {
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if let items = fetchedResultsController.fetchedObjects
+            {
+                let feedItem = items[indexPath.row]
+                feedItem.isInFavorites = !feedItem.isInFavorites
+                model.update(item: feedItem)
+            }
+            
+        }
+    }
+    
 
     
 }
 
-extension SettingsController: NSFetchedResultsControllerDelegate {
+extension FavoritesController: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
+        performFetch()
         tableView.reloadData()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        performFetch()
-        self.tableView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        performFetch()
+//        self.tableView.reloadData()
+//    }
 }

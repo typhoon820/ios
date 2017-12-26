@@ -14,7 +14,7 @@ import SafariServices
 class FeedController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let model = FeedModel()
+    lazy var model = FeedModel(with: UIApplication.container)
     let imgSelected = UIImage(named: "heart-selected.png") as UIImage!
     
     let imgDeselcted = UIImage(named: "heart-unselected.png") as UIImage!
@@ -25,6 +25,7 @@ class FeedController: UIViewController, UITableViewDataSource {
         while let view = superview, !(view is UITableViewCell) {
             superview = view.superview
         }
+        
         guard let cell = superview as? UITableViewCell else {
             print("button is not contained in a table view cell")
             return
@@ -36,7 +37,7 @@ class FeedController: UIViewController, UITableViewDataSource {
         if let newsCell = cell as? NewsCell{
             if(newsCell.isInFavorites.image(for: .normal)!.isEqual(imgDeselcted)){
                 newsCell.isInFavorites.setImage(imgSelected, for: .normal)
-            
+
             }
             else{
                 newsCell.isInFavorites.setImage(imgDeselcted, for: .normal)
@@ -49,15 +50,14 @@ class FeedController: UIViewController, UITableViewDataSource {
             let item = items[indexPath.item]
             item.isInFavorites = !item.isInFavorites
             model.update(item: item)
-            
         }
     }
     
     
-    private lazy var fetchedResultsController: NSFetchedResultsController<FeedItemMO> = {
+    private lazy var fetchedResultsController: NSFetchedResultsController<FeedItemMO>! = {
         let request: NSFetchRequest<FeedItemMO> = FeedItemMO.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "pubDate", ascending: true)]
-        
+        //request.predicate = NSPredicate(format: "isInFavorites = true")
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: request,
             managedObjectContext: model.viewContext,
@@ -98,7 +98,7 @@ class FeedController: UIViewController, UITableViewDataSource {
             let items = fetchedResultsController.fetchedObjects
         {
             let feedItem = items[indexPath.row]
-            
+            print(feedItem.isInFavorites, feedItem.title)
             newsCell.newsTitleLabel.text = feedItem.title
             newsCell.newsDescriptionLabel.text = feedItem.desc
             if feedItem.isInFavorites == true{
@@ -111,6 +111,7 @@ class FeedController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard let index = tableView.indexPathForSelectedRow?.row,
             let items = fetchedResultsController.fetchedObjects else { return true }
@@ -137,6 +138,14 @@ extension FeedController: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
+        performFetch()
         tableView.reloadData()
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        print("===========================")
+////        model.viewContext.refreshAllObjects()
+//        performFetch()
+//        tableView.reloadData()
+//        
+//    }
 }

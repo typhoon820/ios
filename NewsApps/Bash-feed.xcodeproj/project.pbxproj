@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		57D42A7B1FDF153E0055929F /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D42A7A1FDF153E0055929F /* Initial.storyboard */; };
-		57D42A841FDF16FA0055929F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D42A831FDF16FA0055929F /* SettingsController.swift */; };
+		57D42A841FDF16FA0055929F /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D42A831FDF16FA0055929F /* FavoritesController.swift */; };
 		57D9A9A01FDF0FB50017A4FA /* FeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9A99F1FDF0FB50017A4FA /* FeedDetailsViewController.swift */; };
 		57D9A9A31FDF0FEA0017A4FA /* FeedDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D9A9A21FDF0FEA0017A4FA /* FeedDetails.storyboard */; };
+		AE0247551FF21B4C007AB547 /* DatabaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0247541FF21B4C007AB547 /* DatabaseContainer.swift */; };
 		AE29C0671FEA431300596AAD /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE29C0661FEA431300596AAD /* FavoriteCell.swift */; };
 		AE3C31A31F95C91A00873DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C31A21F95C91A00873DD6 /* AppDelegate.swift */; };
 		AE3C31AA1F95C91A00873DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE3C31A91F95C91A00873DD6 /* Assets.xcassets */; };
@@ -25,7 +26,7 @@
 		AEF77BC61FE8DD4200BD91DD /* heart-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF77BC41FE8DD4200BD91DD /* heart-unselected.png */; };
 		AEF77BC71FE8DD4200BD91DD /* heart-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF77BC51FE8DD4200BD91DD /* heart-selected.png */; };
 		AEF77BC91FE8DFF900BD91DD /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF77BC81FE8DFF900BD91DD /* Feed.storyboard */; };
-		AEF77D0A1FE8E74D00BD91DD /* WylsaComFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF77D051FE8E74C00BD91DD /* WylsaComFeedParser.swift */; };
+		AEF77D0A1FE8E74D00BD91DD /* BashParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF77D051FE8E74C00BD91DD /* BashParser.swift */; };
 		AEF77D0B1FE8E74D00BD91DD /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF77D061FE8E74C00BD91DD /* FeedModel.swift */; };
 		AEF77D0C1FE8E74D00BD91DD /* FeedItemSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF77D071FE8E74C00BD91DD /* FeedItemSaver.swift */; };
 		AEF77D0D1FE8E74D00BD91DD /* FeedItemParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF77D081FE8E74D00BD91DD /* FeedItemParser.swift */; };
@@ -40,9 +41,10 @@
 
 /* Begin PBXFileReference section */
 		57D42A7A1FDF153E0055929F /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
-		57D42A831FDF16FA0055929F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		57D42A831FDF16FA0055929F /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		57D9A99F1FDF0FB50017A4FA /* FeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailsViewController.swift; sourceTree = "<group>"; };
 		57D9A9A21FDF0FEA0017A4FA /* FeedDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetails.storyboard; sourceTree = "<group>"; };
+		AE0247541FF21B4C007AB547 /* DatabaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseContainer.swift; sourceTree = "<group>"; };
 		AE29C0661FEA431300596AAD /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		AE3C319F1F95C91A00873DD6 /* Bash-feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bash-feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3C31A21F95C91A00873DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		AEF77BC41FE8DD4200BD91DD /* heart-unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-unselected.png"; sourceTree = "<group>"; };
 		AEF77BC51FE8DD4200BD91DD /* heart-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-selected.png"; sourceTree = "<group>"; };
 		AEF77BC81FE8DFF900BD91DD /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
-		AEF77D051FE8E74C00BD91DD /* WylsaComFeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WylsaComFeedParser.swift; path = "../../../../../../VASILEV/project/Bash-feed/bash-feed/Model/WylsaComFeedParser.swift"; sourceTree = "<group>"; };
+		AEF77D051FE8E74C00BD91DD /* BashParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BashParser.swift; path = "../../../../../../VASILEV/project/Bash-feed/bash-feed/Model/BashParser.swift"; sourceTree = "<group>"; };
 		AEF77D061FE8E74C00BD91DD /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedModel.swift; path = "../../../../../../VASILEV/project/Bash-feed/bash-feed/Model/FeedModel.swift"; sourceTree = "<group>"; };
 		AEF77D071FE8E74C00BD91DD /* FeedItemSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItemSaver.swift; path = "../../../../../../VASILEV/project/Bash-feed/bash-feed/Model/FeedItemSaver.swift"; sourceTree = "<group>"; };
 		AEF77D081FE8E74D00BD91DD /* FeedItemParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItemParser.swift; path = "../../../../../../VASILEV/project/Bash-feed/bash-feed/Model/FeedItemParser.swift"; sourceTree = "<group>"; };
@@ -130,7 +132,7 @@
 		57D42A821FDF16EB0055929F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				57D42A831FDF16FA0055929F /* SettingsController.swift */,
+				57D42A831FDF16FA0055929F /* FavoritesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,7 +212,7 @@
 				AEF77D081FE8E74D00BD91DD /* FeedItemParser.swift */,
 				AEF77D071FE8E74C00BD91DD /* FeedItemSaver.swift */,
 				AEF77D061FE8E74C00BD91DD /* FeedModel.swift */,
-				AEF77D051FE8E74C00BD91DD /* WylsaComFeedParser.swift */,
+				AEF77D051FE8E74C00BD91DD /* BashParser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +251,7 @@
 				AEF77D1A1FE8E8EB00BD91DD /* CoreDataManager.swift */,
 				AEF77D1B1FE8E8EB00BD91DD /* Entities */,
 				AEF77D201FE8E8EB00BD91DD /* Model.xcdatamodeld */,
+				AE0247541FF21B4C007AB547 /* DatabaseContainer.swift */,
 			);
 			name = CoreData;
 			path = XML/CoreData;
@@ -343,15 +346,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D42A841FDF16FA0055929F /* SettingsController.swift in Sources */,
+				57D42A841FDF16FA0055929F /* FavoritesController.swift in Sources */,
 				AE3C31A31F95C91A00873DD6 /* AppDelegate.swift in Sources */,
 				AEF77D0B1FE8E74D00BD91DD /* FeedModel.swift in Sources */,
 				AE7FFC5D1FDFB6370092A17E /* SourceInfoParser.swift in Sources */,
 				AEF77D261FE8E8EB00BD91DD /* SourceMO+CoreDataProperties.swift in Sources */,
 				AE3C31C31F95DE6600873DD6 /* NewsCell.swift in Sources */,
 				AE7B9B511FCD29C300B527FA /* XMLCodable.swift in Sources */,
+				AE0247551FF21B4C007AB547 /* DatabaseContainer.swift in Sources */,
 				AEF77D241FE8E8EB00BD91DD /* FeedItemMO+CoreDataProperties.swift in Sources */,
-				AEF77D0A1FE8E74D00BD91DD /* WylsaComFeedParser.swift in Sources */,
+				AEF77D0A1FE8E74D00BD91DD /* BashParser.swift in Sources */,
 				AE3C31BD1F95CC7000873DD6 /* FeedController.swift in Sources */,
 				AEF77D0D1FE8E74D00BD91DD /* FeedItemParser.swift in Sources */,
 				AEF77D0C1FE8E74D00BD91DD /* FeedItemSaver.swift in Sources */,

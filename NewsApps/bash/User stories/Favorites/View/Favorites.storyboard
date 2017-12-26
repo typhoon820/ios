@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-354" y="278"/>
         </scene>
-        <!--bash.im-->
+        <!--Избранное-->
         <scene sceneID="FqZ-Rb-hni">
             <objects>
-                <viewController id="IxF-zO-GyU" customClass="SettingsController" customModule="Bash_feed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IxF-zO-GyU" customClass="FavoritesController" customModule="Bash_feed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tYW-lh-6b4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="ngq-ao-TeX"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="s70-bg-nXb"/>
-                    <navigationItem key="navigationItem" title="bash.im" id="OQF-ha-8NX"/>
+                    <navigationItem key="navigationItem" title="Избранное" id="OQF-ha-8NX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="al4-cT-brs" id="dtR-Zw-hKs"/>
